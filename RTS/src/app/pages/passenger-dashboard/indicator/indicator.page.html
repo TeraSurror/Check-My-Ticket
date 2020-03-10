@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color='dark'>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>OCCUPY STATUS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list-header *ngIf="user">
+    <ion-label>Name : {{user.firstName}} {{user.lastName}}</ion-label>
+  </ion-list-header>
+
+  <ion-list-header *ngIf="user">
+    <ion-label>Aadhaar : {{ user.aadhaarNo }}</ion-label>
+  </ion-list-header>
+
+  <!-- <h2 class="ion-text-center" *ngIf="user">Name : {{user.firstName}} {{user.lastName}}</h2>
+  <h2 class="ion-text-center" *ngIf="user">AADHAAR NO : {{ user.aadhaarNo }}</h2> -->
+
+  <h2 class="ion-text-center">{{ status }}</h2>
+
+  <div id='one' 
+  [ngClass]="{
+    'cnf':status === 'CNF',
+    'wl':status === 'WL',
+    'default':status === 'NONE'
+  }" ></div>
+  <div id='two'></div>
+</ion-content>
